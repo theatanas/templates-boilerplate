@@ -8,13 +8,35 @@ h1,h2,h3,h4,h5,h6,
 	font-size: 18px;
 }
 
+// Default <a> color
 a {
-	// color: @color-crimson;
-	// font-weight: 600;
-	&:hover, &:active, &:visited, &:focus {
-		// color: @color-crimson;
-        text-decoration: none;
-	}
+	color: blue;
+	font-weight: 600;
+	&:hover, &:active, &:visited, &:focus {color: blue; text-decoration: none; }
+}
+
+// Browser selection backgrounds
+::selection {
+    background: #696968; /* WebKit/Blink Browsers */
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #696968; /* Gecko Browsers */
+    color: #fff;
+}
+
+// Bootstrap UL styling
+ul {margin: 0; list-style: none; padding: 0;}
+
+// Input fields on Firefox
+input::-moz-focus-inner { 
+    border: 0; 
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #fff;
 }
 
 // Bootstrap Overrides - added a breakpoint between the 480px - 768px gap.
@@ -75,5 +97,3 @@ a {
         width: 8.33333333%;
     }
 }
-
-
