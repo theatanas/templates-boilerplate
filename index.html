@@ -61,12 +61,15 @@
         </div>
     </main>
     <footer></footer>
-    <!-- JS Libs -->
-    <script src="js/libs/jquery-1.11.3.min.js"></script>
-    <script src="js/libs/owl.carousel.min.js"></script>
-    <script src="js/libs/jquery.fancybox.pack.js"></script>
-    <script src="js/libs/jquery.smoothState.js"></script>
-    <script src="js/script.js"></script>
-</body>
 
+    <!-- JS -->
+    <script data-main="js/common" src="js/libs/require.js"></script>
+    <script>
+        require(["common"], function() {
+            // Load this page's script once the 'common' script has finished loading
+            require(["functions"]);
+            require(["script"]);
+        })
+    </script>
+</body>
 </html>
