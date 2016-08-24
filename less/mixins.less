@@ -35,3 +35,11 @@
 	-o-transition: all @duration;
 	transition: all @duration;
 }
+
+.add-transitions(@property: all, @duration: 0.35s) {
+    -webkit-transition: @property @duration ease-in-out;
+    -moz-transition: @property @duration ease-in-out;
+    -ms-transition: @property @duration ease-in-out;
+    -o-transition: @property @duration ease-in-out;
+    transition: @property @duration ease-in-out;
+}
