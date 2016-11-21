@@ -1,0 +1,126 @@
+// All kinds of reusable UI elements should be saved here
+
+// Containers
+.container-big {
+	margin-right: auto;
+	margin-left: auto;
+
+	@media (min-width: 768px){width: 750px;}
+	@media (min-width: 992px){width: 970px;}
+	@media (min-width: 1200px){width: 1170px;}
+	@media (min-width: 1400px){width: 1370px;}
+}
+
+.container-wide {
+    @media(min-width: 1300px) {
+        width: 1300px;
+    }
+}
+
+// Tables and Layouts
+.table {display: table;}
+.table-cell {display: table-cell;}
+.table-row {display: table-row;}
+
+// Buttons
+.btn {
+    .transition(.5s);
+    display: block;
+    height: 66px;
+    font-size: 21px;
+    padding: 0 10px;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    border-radius: 40px;
+    outline: 0;
+
+    // BG Colors
+    &.blue-bg {
+        background: rgb(0,185,255);
+    }
+
+    &.green-bg {
+        background: rgb(76,217,100);
+    }
+
+    &.transparent-bg {
+        background-color: transparent;
+    }
+
+    // Text Colors
+    &.color-fff {
+        color: #fff;
+    }
+}
+
+.preloader { // It's a cat.
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: @color-white;
+	z-index: 100;
+
+    .table, .table-cell {
+        height: 100vh;
+        vertical-align: middle;
+    }
+
+    .preloader-logo {
+        left: 0;
+        right: 0;
+        position: absolute;
+        margin-top: -80px;
+
+        img {
+            width: 160px;
+            -webkit-animation: spin .75s infinite linear;
+            -moz-animation: spin .75s infinite linear;
+            animation: spin .75s infinite linear;
+        }
+    }
+}
+
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+   }
+}
+
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+   }
+}
+
+// Owl Controls
+.owl-dots {
+    text-align: center;
+}
+.owl-nav {
+	position: absolute;
+	top: 30%;
+	width: 100%;
+
+	.owl-prev {
+		left: -40px;
+	    position: absolute;
+	}
+
+	.owl-next {
+		right: -40px;
+	    position: absolute;
+	}
+}

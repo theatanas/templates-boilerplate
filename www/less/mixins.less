@@ -1,0 +1,81 @@
+.top-bottom-gradient (@origin: top, @start: #ffffff, @stop: #000000) {
+    background-color: @start;
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: -o-linear-gradient(@origin, @start, @stop);
+    background-image: -ms-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@start, endColorstr=@stop,GradientType=0 ); /* IE6-9 */
+}
+
+// -t - transparency enabled
+.top-bottom-gradient-t (@origin: top, @start: #ffffff, @stop: #000000) {
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: -o-linear-gradient(@origin, @start, @stop);
+    background-image: -ms-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@start, endColorstr=@stop,GradientType=0 ); /* IE6-9 */
+}
+
+.left-right-gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+    background-color: @start;
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: -o-linear-gradient(@origin, @start, @stop);
+    background-image: -ms-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@start, endColorstr=@stop,GradientType=0 ); /* IE6-9 */
+}
+
+.transitions{ transition: all .5s ease-in-out; -webkit-transition: all .5s ease-in-out;}
+
+.transition ( @duration: 0.5s ) {
+	-webkit-transition: all @duration;
+	-moz-transition: all @duration;
+	-ms-transition: all @duration;
+	-o-transition: all @duration;
+	transition: all @duration;
+}
+
+.add-transitions(@property: all, @duration: 0.35s) {
+    -webkit-transition: @property @duration ease-in-out;
+    -moz-transition: @property @duration ease-in-out;
+    -ms-transition: @property @duration ease-in-out;
+    -o-transition: @property @duration ease-in-out;
+    transition: @property @duration ease-in-out;
+}
+
+// Sample mixins for headline fonts
+.top-headline-font(@color: #fff) {
+    font-size: 60px;
+    line-height: 60px;
+    color: @color;
+
+    @media(max-width: 800px) {
+        font-size: 42px;
+        line-height: 39px;
+    }
+}
+
+.regular-headline-font(@color: #fff) {
+    font-size: 48px;
+    line-height: 60px;
+    color: @color;
+
+    @media(max-width: 768px) {
+        font-size: 42px;
+        line-height: 39px;
+    }
+}
+
+// Font weights corresponding to the ones in Photoshop
+.regular() {font-weight: 400;}
+.normal() {font-weight: 400;}
+
+.medium() {font-weight: 500;}
+
+.semibold() {font-weight: 600;}
+.semi-bold() {font-weight: 600;}
+
+.bold() {font-weight: 700;}
