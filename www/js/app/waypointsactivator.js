@@ -1,4 +1,4 @@
-define(function () {
+define(function (require) {
     return {
         // Load the Info Boxes on the Homepage and the About page
         loadInfoBoxesWaypoints: function () {

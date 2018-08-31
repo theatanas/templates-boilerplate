@@ -158,7 +158,14 @@
                         if (httpProtocol && !this.options.useHttp) {
                             imageUrl = imageUrl.replace(/https?:\/\//, '//');
                         }
+                        created_date = new Date(image.created_time * 1000);
                         imageString = this._makeTemplate(this.options.template, {
+                            author: image.user.full_name, // theatanas 
+                            avatarUrl: image.user.profile_picture, // theatanas
+                            created_time: image.created_time, // theatanas
+                            date_day: created_date.getDate(),
+                            date_month: created_date.getMonth() + 1,
+                            date_year: created_date.getFullYear(),
                             model: image,
                             id: image.id,
                             link: image.link,

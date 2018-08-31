@@ -1,6 +1,11 @@
 // Basic animations from animate.css. Check out the link for more (https://daneden.github.io/animate.css/)
 // The library is also included within css/libs, but it makes no sense to include all of the animations. Take the best, leave away the rest.
-.animated { -webkit-animation-fill-mode: both; animation-fill-mode: both; }
+.animated {
+    -webkit-animation-duration: 1s; // Should not be like this, but w/e
+    animation-duration: 1s; // Should not be like this, but w/e
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
 
 .duration-2000 {-webkit-animation-duration: 2000ms !important; animation-duration: 2000ms !important;}
 .duration-1500 {-webkit-animation-duration: 1500ms !important; animation-duration: 1500ms !important;}
@@ -221,4 +226,29 @@
         opacity: 1;
         transform: none;
     }
+}
+
+// Loader Spin
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+   }
+}
+
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+   }
 }

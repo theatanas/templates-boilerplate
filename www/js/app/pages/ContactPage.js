@@ -1,4 +1,4 @@
-define(function() {
+define(function(require) {
     return {
 
         // Vaildate the Contact Form

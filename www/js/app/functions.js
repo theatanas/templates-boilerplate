@@ -1,4 +1,4 @@
-define(function() {
+define(function(require) {
     return {
     	keys: {37: 1, 38: 1, 39: 1, 40: 1},
 
@@ -52,6 +52,33 @@ define(function() {
                 // Go!
                 path.style.strokeDashoffset = '0'
             }, delay);
+        },
+
+        // Example function
+        dockTopHeader: function() {
+            var bgWrapH = $(".content-container").height();
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > bgWrapH) {
+                $(".bg-wrap").addClass("absolute");
+            } else {
+                $(".bg-wrap").removeClass("absolute");
+            }
+        },
+
+        // https://davidwalsh.name/javascript-debounce-function
+        debounce: function(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
         },
 
         preventDefault: function (e) {

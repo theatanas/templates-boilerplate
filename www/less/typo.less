@@ -1,32 +1,66 @@
+// Everything Typo related
+
+// Default typo for <body>
 body {
 	.regular();
 	font-size: 18px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-family: sans-serif;
+	color: @color-dark-grey;
 }
 
-h1, .h1 {
-	font-size: 50px;
+// Font Faces - uncomment if applicable
+// @font-face {
+// 	font-family: 'FontUno';
+// 	font-weight: 400;
+// 	src: url('fonts/FontUno/FontUno-Regular.ttf'),
+// 		 url('fonts/FontUno/FontUno-Regular.eot');
+// }
+
+// @font-face {
+// 	font-family: 'UtopiaBold';
+// 	font-weight: 600;
+// 	src: url('fonts/FontDos/FontDos-Bold.ttf'),
+// 		 url('fonts/FontDos/FontDos-Bold.eot');
+// }
+
+// Font weights corresponding to the ones in Photoshop
+.light() {font-weight: 300;}
+.regular() {font-weight: 400;}
+.normal() {font-weight: 400;}
+.medium() {font-weight: 500;}
+.semibold() {font-weight: 600;}
+.bold() {font-weight: 700;}
+.black() {font-weight: 900;}
+
+// Font size mixins
+.fz-90 () {
+	font-size: 90px;
+	line-height: 90px;
+
+	@media(max-width:991px) {
+		font-size: 60px;
+		line-height: 60px;
+	}
+
+	@media(max-width:480px) {
+		font-size: 45px;
+		line-height: 45px;
+	}
 }
 
-h2, .h2 {
-	font-size: 24px;
+.fz-33() {
+	font-size: 33px;
+	line-height: 38px;
 }
 
-h3, .h3 {
-	font-size: 25px;
-}
-
-h4, .h4 {
+.p(@color) {
 	font-size: 18px;
-}
-
-h5, .h5 {
-}
-
-h6, .h6 {
+	line-height: 30px;
+	color: @color;
 }
 
 p {
+	.p(@color-dark-grey);
 }

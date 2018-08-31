@@ -5,10 +5,12 @@ define(function(require) {
 
 			// VARS
 			var body = $("body"),
+				pageClass = $("body").attr("class"),
 				owl = require("owlSmooth"),
+				functions = require('functions'),
+				bootstrap = require('bootstrap'),
 				waypoints = require("waypoints"),
-				functions = require('functions');
-				paraxify = require('paraxify');
+				waypointsActivator = require("waypointsActivator")
 
 			// SLIDERS
 			var sliders = require("sliders");
@@ -20,6 +22,13 @@ define(function(require) {
 			if ($(".AboutPage").length) {
 				var AboutPage = require("AboutPage");
 				AboutPage.activateSomething();
+
+				// Debounce demo
+				var callFx = functions.debounce(function(){
+					functions.dockTopHeader();
+				}, 1)
+
+				document.addEventListener('scroll', callFx);
 			}
 
 			// CONTACT PAGE
